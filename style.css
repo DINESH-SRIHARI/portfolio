@@ -4,6 +4,9 @@
     font-family: 'poppins',sans-serif;
     box-sizing: border-box;
 }
+html{
+    scroll-behavior: smooth;
+}
 body{
     background-color: black;
     color: aliceblue;
@@ -133,20 +136,104 @@ nav ul li a:hover::after{
     background: yellow;
     transform: translateX(-10px);
 }
-.contact-left{
+.contact-container {
+    display: flex;
+    justify-content: space-between;
+}
+/* .contact-left{
     flex-basis: 35%;
     font-size: 30px;
     line-height: 1.5;
 }
+.contact-right{
+    flex-basis: 35%;
+    font-size: 30px;
+    line-height: 1.5;
+    text-align: right;
+} */
+.contact-left {
+    flex-basis: 35%;
+    font-size: 30px;
+    line-height: 1.5;
+}
+.contact-left h3{
+    color: #45a6cc;
+}
+/* Style for .contact-right, align it to the right */
+.contact-right {
+    flex-basis: 35%;
+    font-size: 30px;
+    line-height: 1.5;
+    margin-left: auto; /* Align .contact-right to the right by pushing it to the right edge of the container */
+}
+.contact-right h3{
+    color: #45a6cc;
+}
 .copyright{
     width: 100%;
     text-align: center;
-    padding: 50px 0px;
-    background:#262626;
-    font-weight: 300;
+    padding: 35px 0px;
+    background-color: #262626;
+    font-weight: 500;
     margin-top: 20px;
 }
-.copyright span{
+.copyright span {
     font-weight: bold;
     color: #45a6cc;
+}
+nav .fa-regular{
+    display: none;
+}
+nav .fa-solid{
+    display: none;
+}
+@media only screen and (max-width:600px) {
+    #header{
+        background-image: url(images/dinesh.pn);
+    }
+    .header-text{
+        margin-top: 100%;
+        font-size: 16px;
+    }
+    nav .fa-regular{
+        display: block;
+        font-size: 25px;
+    }
+    nav .fa-solid{
+        display: block;
+        font-size: 25px;
+    }
+    nav ul{
+        background: #45a6cc;
+        position: fixed;
+        top: 0;
+        right: -200px;
+        width: 200px;
+        height:100vh;
+        padding-top: 50px;
+        z-index: 2;
+        transition: right 0.5s;
+    }
+    nav ul li{
+        display: block;
+        margin: 25px;
+    }
+    nav ul .fa-regular{
+        position: absolute;
+        top: 25px;
+        left: 25px;
+        cursor: pointer;
+    }
+    .sub-title{
+        font-size: 40px;
+    }
+    .about-col-1,.about-col-2{
+        flex-basis: 100%;
+    }
+    .about-col-1{
+        margin-bottom: 30px;
+    }
+    .about-col-2{
+        font-size: 14px;
+    }
 }
